@@ -2,49 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>NOVA + NAVI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <title>Welcome to NOVA</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 <body>
-  <!-- NOVA WELCOME -->
-  <section id="screen-nova" class="screen active" aria-labelledby="nova-title">
+  <main class="center">
     <div>
-      <h1 id="nova-title">Welcome to NOVA</h1>
-      <p>NOVA will help reveal your purpose and align your strengths to real opportunities. Press play to hear NOVA’s welcome, then begin.</p>
-      <div class="btnbar">
-        <button id="btn-nova-play">▶ Play Welcome</button>
-        <button id="btn-nova-stop" class="secondary">⏹ Stop</button>
-        <button id="btn-begin">Begin</button>
-      </div>
-      <div class="hint">Tip: Some browsers require a tap before audio can play.</div>
-      <div class="footer">All-in-one integrated bundle — no placeholders.</div>
+      <img class="logo" src="/assets/img/logo.svg" alt="NOVA logo" />
+      <h1>Welcome to NOVA</h1>
+      <p class="lead">NOVA reveals your strengths and aligns them with purpose-driven work.</p>
+      <button id="begin" class="btn primary">Begin</button>
+      <div class="small">Audio will play when you begin.</div>
     </div>
-  </section>
-
-  <!-- NAVI WELCOME (after Begin) -->
-  <section id="screen-navi" class="screen" aria-labelledby="navi-title">
-    <div>
-      <h1 id="navi-title">Meet NAVI</h1>
-      <p>NAVI will guide your next steps — training, resume upgrades, and matched roles. Press play for NAVI’s welcome.</p>
-      <div class="btnbar">
-        <button id="btn-navi-play">▶ Play Welcome</button>
-        <button id="btn-navi-stop" class="secondary">⏹ Stop</button>
-        <button id="btn-continue">Continue</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- AUDIO (multiple sources for robust support) -->
-  <audio id="audio-nova" preload="auto">
-    <source src="assets/audio/nova_intro.m4a" type="audio/mp4" />
-    <source src="assets/audio/nova_intro.wav" type="audio/wav" />
-  </audio>
-
-  <audio id="audio-navi" preload="auto">
-    <source src="assets/audio/navi_intro.m4a" type="audio/mp4" />
-  </audio>
-
-  <script src="assets/js/app.js"></script>
+    <audio id="novaAudio" preload="auto" src="/assets/audio/nova-intro.wav"></audio>
+  </main>
+  <script>
+    const btn = document.getElementById('begin');
+    const audio = document.getElementById('novaAudio');
+    btn.addEventListener('click', async () => {
+      try { await audio.play(); } catch(e) {}
+      setTimeout(()=>{ window.location.href = "/traits.html"; }, 1200);
+    });
+  </script>
 </body>
 </html>

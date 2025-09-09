@@ -2,19 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>NOVA Traits</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <title>Select Your Traits • NOVA</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 <body>
-  <section class="screen active">
-    <div>
-      <h1>Your Traits</h1>
-      <p>This is a working traits page placeholder so the flow never dead-ends. Replace this with the full traits UI when ready.</p>
-      <div class="btnbar">
-        <a href="./index.html"><button class="secondary">← Back</button></a>
-      </div>
+  <div class="container">
+    <h1>Choose your top traits</h1>
+    <p class="lead">Pick as many as resonate. We'll use these to suggest roles and salary bands.</p>
+    <div class="traits"></div>
+    <div style="margin-top:1rem">
+      <a id="seeResults" class="btn primary" href="javascript:void(0)">See my results</a>
+      <a class="btn" href="/pricing.html">See services & pricing</a>
     </div>
-  </section>
+  </div>
+  <script type="module" src="/assets/js/traits.js"></script>
 </body>
 </html>
